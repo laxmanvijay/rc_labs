@@ -10,19 +10,11 @@ entity and_mod is
 end and_mod;
 
 architecture Behavioral of and_mod is
-    signal a_reg : STD_LOGIC;
-    signal b_reg : STD_LOGIC;
-    signal y_internal : STD_LOGIC;
 begin
     process(clk)
     begin
         if rising_edge(clk) then
-            a_reg <= a;
-            b_reg <= b;
-            
-            y_internal <= a_reg and b_reg;
-            
-            y <= y_internal;
+            y <= a AND b;
         end if;
     end process;
     
