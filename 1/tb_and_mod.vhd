@@ -9,7 +9,7 @@ end tb_and_mod;
 architecture Behavioral of tb_and_mod is
     
     constant CLK_PERIOD : time := 10 ns;
-    signal clk          : std_logic := '0';
+    signal CLK100MHZ          : std_logic := '0';
     signal a            : std_logic := '0';
     signal b            : std_logic := '0';
     signal y            : std_logic;
@@ -18,7 +18,7 @@ architecture Behavioral of tb_and_mod is
         Port (
             a   : in STD_LOGIC;
             b   : in STD_LOGIC;
-            clk : in STD_LOGIC;
+            CLK100MHZ : in STD_LOGIC;
             y   : out STD_LOGIC
         );
     end component and_mod;
@@ -29,15 +29,15 @@ begin
         port map(
             a   => a,
             b   => b,
-            clk => clk,
+            CLK100MHZ => CLK100MHZ,
             y   => y
         );
 
     proc_clk : process
     begin
-        clk <= '0';
+        CLK100MHZ <= '0';
         wait for CLK_PERIOD/2;
-        clk <= '1';
+        CLK100MHZ <= '1';
         wait for CLK_PERIOD/2;
     end process;
     
