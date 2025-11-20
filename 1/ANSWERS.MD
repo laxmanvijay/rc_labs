@@ -13,16 +13,16 @@ No. Sythesis maps RTL to FPGA resources and provides an estimate but implementat
 
 
 #### What is the worst negative slack in your design? 
-2.024ns
+8.621ns
 #### What is the worst hold slack in your design? 
--1.020ns
+0.132ns
 
 # Task 2.6 Implementation
 
 #### What is the worst negative slack in your design? 
--0.848ns
+8.756ns
 #### What is the worst hold slack in your design? 
-0.000ns
+0.198ns
 
 #### Compare the slack values to the results from synthesis. Are the values equal to the results from synthesis? If yes, why? If no, why?
 
@@ -43,6 +43,6 @@ Change the physical locations of logic cells on the FPGA which increases/decreas
 # Modify the routing
 
 #### What is the worst negative slack in your design? 
--0.851ns
+8.756ns
 #### What is the worst hold slack in your design? 
-0.329ns
+0.198ns
