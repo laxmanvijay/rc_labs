@@ -43,6 +43,6 @@ Change the physical locations of logic cells on the FPGA which increases/decreas
 # Modify the routing
 
 #### What is the worst negative slack in your design? 
-8.756ns
+8.711ns
 #### What is the worst hold slack in your design? 
-0.198ns
+0.140ns
