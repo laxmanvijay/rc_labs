@@ -3,10 +3,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity nand_mod is
     Generic (
-        N : integer := 16
+        N : integer := 7
     );
     Port (
-        clk : in STD_LOGIC;
+        CLK100MHZ : in STD_LOGIC;
         reset : in STD_LOGIC;
         SW : in STD_LOGIC_VECTOR(15 downto 0);
         led_out : out STD_LOGIC
@@ -19,11 +19,11 @@ architecture Behavioral of nand_mod is
     signal led_reg : STD_LOGIC;
     
 begin
-    process(clk, reset)
+    process(CLK100MHZ, reset)
     begin
         if reset = '1' then
             SW_reg <= (others => '0');
-        elsif rising_edge(clk) then
+        elsif rising_edge(CLK100MHZ) then
             SW_reg <= SW;
         end if;
     end process;
@@ -38,11 +38,11 @@ begin
         and_result <= temp_and;
     end process;
     
-    process(clk, reset)
+    process(CLK100MHZ, reset)
     begin
         if reset = '1' then
             led_reg <= '0';
-        elsif rising_edge(clk) then
+        elsif rising_edge(CLK100MHZ) then
             led_reg <= not and_result;
         end if;
     end process;

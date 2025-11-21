@@ -10,14 +10,14 @@ architecture Behavioral of nand_mod_tb is
             N : integer := 16
         );
         Port (
-            clk : in STD_LOGIC;
+            CLK100MHZ : in STD_LOGIC;
             reset : in STD_LOGIC;
             SW : in STD_LOGIC_VECTOR(15 downto 0);
             led_out : out STD_LOGIC
         );
     end component;
     
-    signal clk : STD_LOGIC := '0';
+    signal CLK100MHZ : STD_LOGIC := '0';
     signal reset : STD_LOGIC := '0';
     signal SW : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
     signal led_out : STD_LOGIC;
@@ -32,7 +32,7 @@ begin
             N => N_TEST
         )
         port map (
-            clk => clk,
+            CLK100MHZ => CLK100MHZ,
             reset => reset,
             SW => SW,
             led_out => led_out
@@ -40,9 +40,9 @@ begin
     
     clk_process: process
     begin
-        clk <= '0';
+        CLK100MHZ <= '0';
         wait for clk_period/2;
-        clk <= '1';
+        CLK100MHZ <= '1';
         wait for clk_period/2;
     end process;
     
